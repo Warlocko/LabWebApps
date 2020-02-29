@@ -19,7 +19,7 @@ router.get('/products/:id/edit', PagesController.editProduct);
 
 router.post('/products/:id/edit', PagesController.updateProduct);
 
-router.get('/delete/:id', PagesController.deleteProduct);
+router.post('/delete/:id', PagesController.deleteProduct);
 
 // Exporta las configuraciones
 module.exports = router;
