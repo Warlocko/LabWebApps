@@ -1,0 +1,33 @@
+<div class="container">
+<h1>Hello MVC</h1>
+</div>
+<br>
+<div class="container">
+<h2>Our products</h2>
+</div>
+<br>
+<table style="font-family: Poppins; width:100%;" class="container">
+    <tr style="background-color:#B9BBB6; color: white;";>
+        <th>#</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+    </tr>
+    {{#each products}}
+    <tr>
+        <th>{{id}}</th>
+        <th>Nombre: {{name}}</th>
+        <th> $ {{price}} </th>
+        <th>
+            <ul style="list-style: none; line-height: 40px;">
+                <li><a href="/products/{{id}}">Show</a></li>
+                <li><a href="/products/{{id}}/edit">Edit</a></li>
+            </ul>
+        </th>
+    </tr>
+    {{/each}}
+</table>
+<hr>
+<div class="container">
+<a type="button" class="btn btn-default" href="/create" style="border1: px; border-bottom-style: solid; border-radius:0;">Add a new Product</a>
+</div>
