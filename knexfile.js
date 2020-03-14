@@ -8,9 +8,9 @@ module.exports = {
     connection: {
       host: process.env.DB_DEVELOPMENT_HOST || 'localhost',
       port: process.env.DB_DEVELOPMENT_PORT || '3306',
-      database: process.env.DB_DEVELOPMENT_NAME || 'authentication',
+      database: process.env.DB_DEVELOPMENT_NAME || '',
       user:  process.env.DB_DEVELOPMENT_USER || 'root',
-      password: process.env.DB_DEVELOPMENT_PASSWORD || 'Adhd=1404'
+      password: process.env.DB_DEVELOPMENT_PASSWORD || ''
     },
     pool: {
       min: 2,
@@ -25,9 +25,9 @@ module.exports = {
     connection: {
       host: process.env.DB_PRODUCTION_HOST || 'localhost',
       port: process.env.DB_PRODUCTION_PORT || '3306',
-      database: process.env.DB_PRODUCTION_NAME || 'authentication',
+      database: process.env.DB_PRODUCTION_NAME || '',
       user:  process.env.DB_PRODUCTION_USER || 'root',
-      password: process.env.DB_PRODUCTION_PASSWORD || 'Adhd=1404'
+      password: process.env.DB_PRODUCTION_PASSWORD || ''
     },
     pool: {
       min: 2,
