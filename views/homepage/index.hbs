@@ -34,6 +34,9 @@
               <a href="javascript:;" onclick="parentNode.submit();" class="card-link">Done</a>
             </form>
           {{/eq}}
+            <form action="/tasks/{{id}}" method="POST">
+              <a href="javascript:;" onclick="parentNode.submit();" class="card-link">Delete</a>
+            </form>
         </div>
       </div>
       {{/each}}

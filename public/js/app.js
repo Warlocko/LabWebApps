@@ -34,9 +34,38 @@ function addTask(task) {
       <form action="/tasks/${task.id}/done" method="POST">
         <a href="javascript:;" onclick="parentNode.submit();" class="card-link">Done</a>
       </form>
+      <form action="/tasks/${task.id}" method="POST">
+        <a href="javascript:;" onclick="parentNode.submit();" class="card-link">Delete</a>
+      </form>
     </div>
   </div>
   `;
   let node = document.createRange().createContextualFragment(html);
   document.getElementById('tasksList').prepend(node);
+}
+
+function deleteTask(e) {
+  const id = e.dataset.id;
+
+  const body = {
+    method: "DELETE",
+    headers: { Accept: "application/json", "Content-Type": "application/json" },
+    body: JSON.stringify({ id })
+  };
+
+  fetch(`/task/${id}`, body)
+    .then(response => {
+      if (!response.ok) {
+        throw "Error in AJAX call";
+      }
+
+      return response.json();
+    })
+    .then(task => {
+      const node = document.getElementById(task);
+      node.remove();
+    })
+    .catch(error => {
+      console.error(error);
+    });
 }

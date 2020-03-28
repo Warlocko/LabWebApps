@@ -8,4 +8,6 @@ router.post('/tasks', tasksController.store);
 
 router.post('/tasks/:id/done', tasksController.done);
 
+router.post('/tasks/:id', tasksController.destroy);
+
 module.exports = router;

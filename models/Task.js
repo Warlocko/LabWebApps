@@ -22,9 +22,15 @@ exports.find = (id) => {
     .first();
 }
 
-exports.markAsDone = (task) => {
+exports.finished = (task) => {
   return knex('tasks')
     .update({ status: this.DONE })
     .update('updated_at', knex.fn.now())
     .where('id', task.id);
+}
+
+exports.delete = (id) => {
+  return knex('tasks')
+  .delete()
+  .where('id', id);
 }
